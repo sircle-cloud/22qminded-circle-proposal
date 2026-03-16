@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>22qMinded Circle — Your Private Community Platform</title>
+    <title>22qMinded Community — Your Private Membership Platform</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,7 +78,7 @@
         nav .container { display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
         .nav-logo img { height: 36px; }
-        .nav-logo span { font-family: 'Cormorant Infant', serif; font-size: 20px; font-weight: 600; color: var(--text-dark); }
+        .nav-logo span { display: none; }
         nav .nav-badge {
             font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px;
             color: var(--primary-dark); background: var(--primary-light); padding: 6px 14px; border-radius: 20px;
@@ -86,26 +86,31 @@
 
         /* Hero */
         .hero {
-            padding: 140px 0 0;
-            background: linear-gradient(170deg, var(--white) 0%, var(--bg-light) 50%, var(--primary-light) 100%);
+            position: relative; padding: 180px 0 120px; min-height: 520px;
+            background: url('https://www.22qminded.com/wp-content/uploads/2025/11/22qMinded-17-11-25-17.jpg') center 30% / cover no-repeat;
+            display: flex; align-items: center;
         }
-        .hero-inner { text-align: center; max-width: 750px; margin: 0 auto; padding-bottom: 60px; }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(180deg, rgba(34,34,34,0.65) 0%, rgba(34,34,34,0.5) 60%, rgba(90,154,138,0.4) 100%);
+            border-radius: 0 0 var(--radius) var(--radius);
+        }
+        .hero-inner {
+            text-align: center; max-width: 750px; margin: 0 auto; position: relative; z-index: 2;
+        }
         .hero-badge {
             display: inline-block; font-size: 13px; font-weight: 600; text-transform: uppercase;
-            letter-spacing: 2px; color: var(--accent); background: var(--white);
-            border: 1px solid var(--primary); padding: 8px 20px; border-radius: 30px; margin-bottom: 28px;
+            letter-spacing: 2px; color: var(--white); background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3); padding: 8px 20px; border-radius: 30px; margin-bottom: 28px;
+            backdrop-filter: blur(4px);
         }
         .hero h1 {
-            font-size: clamp(40px, 5.5vw, 64px); color: var(--text-dark); margin-bottom: 20px;
+            font-size: clamp(40px, 5.5vw, 64px); color: var(--white); margin-bottom: 20px;
         }
-        .hero h1 span { color: var(--primary-dark); }
+        .hero h1 span { color: var(--primary); }
         .hero p {
-            font-size: 19px; color: var(--text-medium); max-width: 600px;
+            font-size: 19px; color: rgba(255,255,255,0.85); max-width: 600px;
             margin: 0 auto 0; line-height: 1.8;
-        }
-        .hero-image {
-            width: 100%; max-height: 420px; object-fit: cover; object-position: center 30%;
-            border-radius: 0; margin-top: 60px;
         }
 
         /* Sections */
@@ -182,10 +187,10 @@
             border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md);
         }
         .comparison-table thead th {
-            background: var(--text-dark); color: var(--white); padding: 20px 24px;
+            background: var(--accent); color: var(--white); padding: 20px 24px;
             text-align: left; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
         }
-        .comparison-table thead th:last-child { background: var(--secondary); }
+        .comparison-table thead th:last-child { background: var(--primary-dark); }
         .comparison-table thead th .th-price {
             display: block; font-size: 22px; font-weight: 700; margin-top: 4px;
             font-family: 'Cormorant Infant', serif;
@@ -197,11 +202,11 @@
         }
         .comparison-table tbody tr:last-child td { border-bottom: none; }
         .comparison-table tbody td:first-child { font-weight: 600; color: var(--text-dark); width: 25%; }
-        .comparison-table tbody td:last-child { background: rgba(64, 84, 178, 0.03); }
+        .comparison-table tbody td:last-child { background: rgba(109, 204, 197, 0.06); }
         .check { color: var(--success); font-weight: 700; }
         .cross { color: var(--warning); font-weight: 700; }
         .highlight-row td { background: var(--primary-light) !important; font-weight: 600; color: var(--text-dark); }
-        .highlight-row td:last-child { background: rgba(64, 84, 178, 0.08) !important; color: var(--secondary); font-weight: 700; }
+        .highlight-row td:last-child { background: var(--primary-light) !important; color: var(--primary-dark); font-weight: 700; }
 
         /* Mockups */
         .mockup-tabs { display: flex; gap: 8px; margin-bottom: 30px; flex-wrap: wrap; }
@@ -352,7 +357,7 @@
             border: 2px solid var(--primary);
         }
         .pricing-header {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary-dark) 100%);
             color: var(--white); padding: 36px; text-align: center;
         }
         .pricing-header .pricing-badge {
@@ -382,11 +387,11 @@
         }
         .bundle-card h4 { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 6px; }
         .bundle-card p { font-size: 14px; color: var(--text-medium); }
-        .bundle-price { font-family: 'Cormorant Infant', serif; font-size: 32px; font-weight: 700; color: var(--secondary); margin: 8px 0; }
+        .bundle-price { font-family: 'Cormorant Infant', serif; font-size: 32px; font-weight: 700; color: var(--primary-dark); margin: 8px 0; }
         .bundle-save { font-size: 13px; color: var(--success); font-weight: 600; }
 
         .cost-savings { margin-top: 30px; text-align: center; font-size: 20px; font-weight: 600; color: var(--accent); }
-        .cost-savings span { font-family: 'Cormorant Infant', serif; font-size: 32px; color: var(--secondary); }
+        .cost-savings span { font-family: 'Cormorant Infant', serif; font-size: 32px; color: var(--primary-dark); }
 
         /* Founders */
         .founders { display: flex; justify-content: center; gap: 48px; margin-top: 50px; }
@@ -422,10 +427,10 @@
 
         /* Footer */
         footer {
-            text-align: center; padding: 50px 30px; background: var(--text-dark); color: rgba(255,255,255,0.5);
-            font-size: 13px;
+            text-align: center; padding: 50px 30px; background: var(--bg-light);
+            color: var(--text-light); font-size: 13px;
         }
-        footer strong { color: rgba(255,255,255,0.8); }
+        footer strong { color: var(--text-dark); }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -464,7 +469,6 @@
             <h1>Your Own <span>Community Platform</span></h1>
             <p>A private, secure membership platform built exclusively for 22qMinded — on your domain, in your branding, under your full control.</p>
         </div>
-        <img class="hero-image" src="https://www.22qminded.com/wp-content/uploads/2025/11/22qMinded-17-11-25-17.jpg" alt="22qMinded Community">
     </div>
 </section>
 
@@ -472,29 +476,29 @@
 <section>
     <div class="container">
         <div class="section-label reveal">Why Build Custom?</div>
-        <h2 class="reveal">More WordPress plugins won't solve this</h2>
-        <p class="section-intro reveal">Adding LearnDash, BuddyBoss, and more plugins on top of WordPress makes your site slower, more fragile, and harder to maintain. There's a better way.</p>
+        <h2 class="reveal">Why not Circle.so, Mighty Networks, or more plugins?</h2>
+        <p class="section-intro reveal">Off-the-shelf platforms like Circle.so and Mighty Networks are generic. Adding more WordPress plugins makes your site fragile. Neither option gives you what 22qMinded actually needs.</p>
         <div class="problem-grid">
             <div class="problem-card reveal">
-                <h3>The WordPress Problem</h3>
+                <h3>The Alternatives</h3>
                 <ul>
-                    <li>LearnDash + BuddyBoss + WooCommerce + Subscriptions = 5+ heavy plugins</li>
-                    <li>Every plugin update risks breaking the others</li>
-                    <li>Site performance degrades with each addition</li>
+                    <li>Circle.so / Mighty Networks: your members leave your website for a generic platform you don't control</li>
+                    <li>English-only interfaces, no Dutch support, no custom group logic</li>
+                    <li>1-2% transaction fees on every membership payment</li>
                     <li>No automatic group assignment (EU/AU, 0-18/18+)</li>
-                    <li>No database-level privacy between groups</li>
-                    <li>Generic interface — not built for your audience</li>
+                    <li>LearnDash + BuddyBoss on WordPress = 5+ heavy plugins that slow your site</li>
+                    <li>No database-level privacy between groups — critical for a medical community</li>
                 </ul>
             </div>
             <div class="solution-card reveal reveal-delay-2">
-                <h3>The Custom Solution</h3>
+                <h3>Your Own Platform</h3>
                 <ul>
-                    <li>One dedicated platform — no plugin dependencies</li>
-                    <li>community.22qminded.com — your domain, your brand</li>
+                    <li>community.22qminded.com — your domain, your brand, your ecosystem</li>
+                    <li>Members stay within your world, never redirected to a third party</li>
                     <li>Automatic group assignment at registration</li>
                     <li>Medical-grade data isolation between groups</li>
-                    <li>WordPress stays lightweight (shop only)</li>
-                    <li>Every feature designed for your exact needs</li>
+                    <li>WordPress stays lightweight (shop only, no heavy plugins)</li>
+                    <li>Every feature designed around your exact needs and audience</li>
                 </ul>
             </div>
         </div>
@@ -548,7 +552,7 @@
                     <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
                 </div>
                 <h4>Video & Webinar Library</h4>
-                <p>Upload and categorise all webinars. Secure streaming with progress tracking. Replaces LearnDash entirely.</p>
+                <p>All webinars embedded via Vimeo (unlisted links). Categorised by topic, with progress tracking per member. Replaces LearnDash entirely.</p>
             </div>
             <div class="feature-card reveal reveal-delay-1">
                 <div class="feature-icon">
@@ -569,7 +573,7 @@
                     <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                 </div>
                 <h4>Coaching Booking</h4>
-                <p>1 session/year included per member. Extra at 25% discount. Integrated calendar — no separate Calendly needed.</p>
+                <p>Members book 1:1 coaching sessions directly from the platform. Simple calendar with available time slots — no separate Calendly or external tool needed.</p>
             </div>
             <div class="feature-card reveal reveal-delay-4">
                 <div class="feature-icon">
@@ -589,8 +593,8 @@
                 <div class="feature-icon">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
                 </div>
-                <h4>Live Session Integration</h4>
-                <p>Schedule monthly sessions. Recordings automatically appear in the library. Calendar reminders for members.</p>
+                <h4>Zoom Integration</h4>
+                <p>Schedule monthly live sessions via your existing Zoom account. Recordings automatically added to the video library. Calendar reminders for members.</p>
             </div>
             <div class="feature-card reveal reveal-delay-1">
                 <div class="feature-icon">
@@ -645,7 +649,7 @@
                         <div class="mk-sidebar">
                             <div class="mk-sidebar-header">
                                 <div class="mk-sidebar-logo">22q</div>
-                                <div class="mk-sidebar-title">22qMinded Circle</div>
+                                <div class="mk-sidebar-title">22qMinded Community</div>
                             </div>
                             <div class="mk-nav-section">
                                 <div class="mk-nav-label">Main</div>
@@ -739,7 +743,7 @@
                         <div class="mk-sidebar">
                             <div class="mk-sidebar-header">
                                 <div class="mk-sidebar-logo">22q</div>
-                                <div class="mk-sidebar-title">22qMinded Circle</div>
+                                <div class="mk-sidebar-title">22qMinded Community</div>
                             </div>
                             <div class="mk-nav-section">
                                 <div class="mk-nav-label">Main</div>
@@ -819,7 +823,7 @@
                     <div class="mk-layout">
                         <div class="mk-sidebar">
                             <div class="mk-sidebar-header">
-                                <div class="mk-sidebar-logo" style="background: var(--secondary)">A</div>
+                                <div class="mk-sidebar-logo" style="background: var(--accent)">A</div>
                                 <div class="mk-sidebar-title">Admin Panel</div>
                             </div>
                             <div class="mk-nav-section">
@@ -890,33 +894,34 @@
     <div class="container">
         <div class="section-label reveal">Platform Comparison</div>
         <h2 class="reveal">How we compare</h2>
-        <p class="section-intro reveal">An honest comparison between the three most viable options for 22qMinded Circle.</p>
+        <p class="section-intro reveal">An honest comparison between the three most viable options for 22qMinded Community.</p>
 
         <div class="reveal">
         <table class="comparison-table">
             <thead>
                 <tr>
                     <th>Feature</th>
-                    <th>Circle.so<span class="th-price">$183/mo</span><span class="th-sub">+ setup + video hosting</span></th>
-                    <th>Mighty Networks<span class="th-price">$165/mo</span><span class="th-sub">+ setup fees</span></th>
-                    <th>22qMinded Custom<span class="th-price">€149/mo</span><span class="th-sub">All inclusive</span></th>
+                    <th>Circle.so<span class="th-price">€183/mo</span><span class="th-sub">+ setup + video hosting</span></th>
+                    <th>Mighty Networks<span class="th-price">€165/mo</span><span class="th-sub">+ setup fees</span></th>
+                    <th>22qMinded Community<span class="th-price">€149/mo</span><span class="th-sub">All inclusive</span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr><td>Custom branding & domain</td><td>Limited</td><td>Limited</td><td><span class="check">100% yours</span></td></tr>
-                <tr><td>Video library & hosting</td><td>Separate (~$30/mo)</td><td>Basic, included</td><td><span class="check">Included</span></td></tr>
+                <tr><td>Video library & hosting</td><td>Separate (~€30/mo)</td><td>Basic, included</td><td><span class="check">Included (via Vimeo)</span></td></tr>
                 <tr><td>Auto group assignment</td><td><span class="cross">Manual</span></td><td><span class="cross">Manual</span></td><td><span class="check">Automatic</span></td></tr>
                 <tr><td>Database-level group isolation</td><td><span class="cross">App-level only</span></td><td><span class="cross">App-level only</span></td><td><span class="check">Row-level security</span></td></tr>
                 <tr><td>Transaction fees</td><td>1-2% on all payments</td><td>Platform fee + Stripe</td><td><span class="check">Stripe standard only</span></td></tr>
-                <tr><td>Coaching booking built-in</td><td><span class="cross">Needs Calendly</span></td><td><span class="cross">External tool</span></td><td><span class="check">Built-in</span></td></tr>
+                <tr><td>Coaching booking</td><td><span class="cross">Needs Calendly (~€15/mo)</span></td><td><span class="cross">External tool</span></td><td><span class="check">Built-in booking system</span></td></tr>
                 <tr><td>Price lock for existing members</td><td><span class="cross">Manual/Zapier</span></td><td><span class="cross">Not supported</span></td><td><span class="check">Automatic</span></td></tr>
                 <tr><td>Programme discounts (25% off)</td><td><span class="cross">Manual</span></td><td><span class="cross">Manual</span></td><td><span class="check">Automatic via Stripe</span></td></tr>
+                <tr><td>Zoom integration for live sessions</td><td>Manual scheduling</td><td>Manual scheduling</td><td><span class="check">Integrated with auto-recording</span></td></tr>
                 <tr><td>Multi-currency (EUR/AUD/USD)</td><td>Via Stripe</td><td>Limited</td><td><span class="check">Auto-detect by region</span></td></tr>
                 <tr><td>Language</td><td>English only</td><td>English only</td><td><span class="check">Any language</span></td></tr>
                 <tr><td>Admin dashboard (MRR/churn)</td><td>Limited</td><td>Basic</td><td><span class="check">Full analytics</span></td></tr>
                 <tr><td>Data ownership</td><td>Their servers</td><td>Their servers</td><td><span class="check">100% yours</span></td></tr>
-                <tr><td>Setup cost</td><td>$1,500 – $3,000</td><td>$1,000 – $2,500</td><td><span class="check">€500</span></td></tr>
-                <tr class="highlight-row"><td>3-year total cost</td><td>$9,300 – $12,600</td><td>$7,400 – $10,300</td><td>€6,288</td></tr>
+                <tr><td>Setup cost</td><td>€1,500 – €3,000</td><td>€1,000 – €2,500</td><td><span class="check">€500</span></td></tr>
+                <tr class="highlight-row"><td>3-year total cost</td><td>€9,300 – €12,600</td><td>€7,400 – €10,300</td><td>€6,288</td></tr>
             </tbody>
         </table>
         </div>
@@ -943,7 +948,7 @@
                         <li>Authentication with magic link login</li>
                         <li>Onboarding flow: child age + region = automatic group assignment</li>
                         <li>Stripe integration: monthly and annual subscriptions</li>
-                        <li>Video library with secure streaming (migrate existing webinars)</li>
+                        <li>Video library with Vimeo embeds (migrate existing unlisted webinars)</li>
                         <li>Member dashboard: view content, see group, manage subscription</li>
                     </ul>
                     <div class="phase-deliverable">Deliverable: Working MVP — members can sign up, pay, and watch webinars</div>
@@ -958,7 +963,7 @@
                         <li>Discussion boards per group with topics</li>
                         <li>Posts, comments, likes/reactions — isolated by group</li>
                         <li>Member profiles (avatar, bio, child age range)</li>
-                        <li>Coaching booking integration (1 session/year included)</li>
+                        <li>Coaching booking: members select available time slots directly on the platform</li>
                         <li>Email notifications: welcome, new posts, session reminders</li>
                     </ul>
                     <div class="phase-deliverable">Deliverable: Full community experience with group isolation</div>
@@ -1082,7 +1087,7 @@
                 </div>
                 <ul class="pricing-features">
                     <li>community.22qminded.com — your domain</li>
-                    <li>Video & webinar library with secure streaming</li>
+                    <li>Video & webinar library (Vimeo embedded)</li>
                     <li>Community discussions per group (4 groups)</li>
                     <li>Coaching booking integration</li>
                     <li>Admin dashboard with revenue analytics</li>
@@ -1111,7 +1116,7 @@
     <div class="container" style="text-align: center;">
         <div class="section-label reveal">Built for You</div>
         <h2 class="reveal">Designed around your vision</h2>
-        <p class="section-intro reveal" style="margin-left: auto; margin-right: auto;">This platform is being built specifically for 22qMinded Circle — not a generic template, but a tool shaped by the expertise and needs of its founders.</p>
+        <p class="section-intro reveal" style="margin-left: auto; margin-right: auto;">This platform is being built specifically for 22qMinded Community — not a generic template, but a tool shaped by the expertise and needs of its founders.</p>
         <div class="founders reveal">
             <div class="founder">
                 <img src="https://www.22qminded.com/wp-content/uploads/2024/08/sasha.jpg" alt="Dr. Sasja Duijff">
@@ -1167,7 +1172,7 @@
 <!-- Footer -->
 <footer>
     <div class="container">
-        <p>Prepared by <strong>Sircle Solutions</strong> — March 2026 — This proposal is valid until April 30, 2026</p>
+        <p>Prepared by <strong>Sircle Solutions</strong> for 22qMinded — March 2026 — Valid until April 30, 2026</p>
     </div>
 </footer>
 
