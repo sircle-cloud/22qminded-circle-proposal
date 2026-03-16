@@ -77,7 +77,7 @@
         }
         nav .container { display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .nav-logo img { height: 36px; }
+        .nav-logo img { height: 48px; }
         .nav-logo span { display: none; }
         nav .nav-badge {
             font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px;
@@ -86,8 +86,8 @@
 
         /* Hero */
         .hero {
-            position: relative; padding: 180px 0 120px; min-height: 520px;
-            background: url('https://www.22qminded.com/wp-content/uploads/2025/11/22qMinded-17-11-25-17.jpg') center 30% / cover no-repeat;
+            position: relative; padding: 200px 0 160px; min-height: 680px;
+            background: url('https://www.22qminded.com/wp-content/uploads/2025/11/22qMinded-17-11-25-17.jpg') center 25% / cover no-repeat;
             display: flex; align-items: center;
         }
         .hero::before {
@@ -390,8 +390,14 @@
         .bundle-price { font-family: 'Cormorant Infant', serif; font-size: 32px; font-weight: 700; color: var(--primary-dark); margin: 8px 0; }
         .bundle-save { font-size: 13px; color: var(--success); font-weight: 600; }
 
-        .cost-savings { margin-top: 30px; text-align: center; font-size: 20px; font-weight: 600; color: var(--accent); }
-        .cost-savings span { font-family: 'Cormorant Infant', serif; font-size: 32px; color: var(--primary-dark); }
+        .cost-savings {
+            margin-top: 40px; text-align: center; font-size: 18px; font-weight: 500; color: var(--text-medium);
+            background: var(--primary-light); padding: 32px; border-radius: var(--radius);
+        }
+        .cost-savings span {
+            display: block; font-family: 'Cormorant Infant', serif; font-size: 48px; font-weight: 700;
+            color: var(--primary-dark); margin-top: 6px;
+        }
 
         /* Founders */
         .founders { display: flex; justify-content: center; gap: 48px; margin-top: 50px; }
@@ -518,7 +524,7 @@
                     <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
                 </div>
                 <h4>Purchase on your shop</h4>
-                <p>Parents buy a membership on 22qminded.com via your existing WooCommerce shop. Multi-currency (EUR/AUD/USD) already works.</p>
+                <p>Parents buy a membership on 22qminded.com via your existing WooCommerce shop. All payments and currencies handled there.</p>
             </div>
             <div class="step-card reveal reveal-delay-2">
                 <div class="step-number">2</div>
@@ -587,7 +593,7 @@
                     <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
                 </div>
                 <h4>Stripe Payments</h4>
-                <p>Monthly or annual. Multi-currency. Price lock for existing members. Only standard Stripe fees — no platform commission.</p>
+                <p>Payments handled via your existing WooCommerce shop and Stripe. Price lock for existing members. No additional platform commission.</p>
             </div>
             <div class="feature-card reveal">
                 <div class="feature-icon">
@@ -601,7 +607,7 @@
                     <svg viewBox="0 0 24 24"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
                 </div>
                 <h4>Programme Discounts</h4>
-                <p>Automatic 25% discount on Feelings in Focus and Care4Parents for Circle members. Tied to membership status.</p>
+                <p>Automatic 25% discount on Feelings in Focus and Care4Parents for Community members. Managed via WooCommerce coupon logic.</p>
             </div>
             <div class="feature-card reveal reveal-delay-2">
                 <div class="feature-icon">
@@ -914,20 +920,17 @@
                 <tr><td>Transaction fees</td><td>1-2% on all payments</td><td>Platform fee + Stripe</td><td><span class="check">Stripe standard only</span></td></tr>
                 <tr><td>Coaching booking</td><td><span class="cross">Needs Calendly (~€15/mo)</span></td><td><span class="cross">External tool</span></td><td><span class="check">Built-in booking system</span></td></tr>
                 <tr><td>Price lock for existing members</td><td><span class="cross">Manual/Zapier</span></td><td><span class="cross">Not supported</span></td><td><span class="check">Automatic</span></td></tr>
-                <tr><td>Programme discounts (25% off)</td><td><span class="cross">Manual</span></td><td><span class="cross">Manual</span></td><td><span class="check">Automatic via Stripe</span></td></tr>
-                <tr><td>Zoom integration for live sessions</td><td>Manual scheduling</td><td>Manual scheduling</td><td><span class="check">Integrated with auto-recording</span></td></tr>
-                <tr><td>Multi-currency (EUR/AUD/USD)</td><td>Via Stripe</td><td>Limited</td><td><span class="check">Auto-detect by region</span></td></tr>
-                <tr><td>Language</td><td>English only</td><td>English only</td><td><span class="check">Any language</span></td></tr>
+                <tr><td>Zoom integration for live sessions</td><td>Manual (copy-paste links)</td><td>Manual</td><td><span class="check">Integrated scheduling + auto-recording to library</span></td></tr>
                 <tr><td>Admin dashboard (MRR/churn)</td><td>Limited</td><td>Basic</td><td><span class="check">Full analytics</span></td></tr>
                 <tr><td>Data ownership</td><td>Their servers</td><td>Their servers</td><td><span class="check">100% yours</span></td></tr>
-                <tr><td>Setup cost</td><td>€1,500 – €3,000</td><td>€1,000 – €2,500</td><td><span class="check">€500</span></td></tr>
-                <tr class="highlight-row"><td>3-year total cost</td><td>€9,300 – €12,600</td><td>€7,400 – €10,300</td><td>€6,288</td></tr>
+                <tr><td>Setup cost</td><td>€1,500 – €3,000</td><td>€1,000 – €2,500</td><td><span class="check">€750</span></td></tr>
+                <tr class="highlight-row"><td>3-year total cost</td><td>€9,300 – €12,600</td><td>€7,400 – €10,300</td><td>€6,114</td></tr>
             </tbody>
         </table>
         </div>
 
         <div class="cost-savings reveal">
-            Save up to <span>€6,312</span> over 3 years compared to Circle.so
+            Save up to <span>€6,486</span> over 3 years compared to Circle.so
         </div>
     </div>
 </section>
@@ -978,7 +981,7 @@
                         <li>Admin dashboard: MRR, ARR, churn, member growth</li>
                         <li>Content management: upload/edit/categorise videos</li>
                         <li>25% member discount on Feelings in Focus + Care4Parents</li>
-                        <li>Multi-currency auto-detection (GeoIP)</li>
+                        <li>Price lock logic for existing members on renewal</li>
                         <li>Security audit + GDPR checklist + responsive polish</li>
                     </ul>
                     <div class="phase-deliverable">Deliverable: Production-ready platform — launch date confirmed</div>
@@ -1082,16 +1085,16 @@
             </div>
             <div class="pricing-body">
                 <div class="pricing-setup">
-                    <strong>€500</strong> one-time setup
-                    <p>Branding, configuration, migration of existing webinars</p>
+                    <strong>€750</strong> one-time setup
+                    <p>Branding, configuration, Vimeo setup, migration of existing webinars</p>
                 </div>
                 <ul class="pricing-features">
                     <li>community.22qminded.com — your domain</li>
-                    <li>Video & webinar library (Vimeo embedded)</li>
+                    <li>Video & webinar library (Vimeo embedded, progress tracking)</li>
                     <li>Community discussions per group (4 groups)</li>
-                    <li>Coaching booking integration</li>
+                    <li>Coaching booking system (Calendly-style)</li>
+                    <li>Zoom integration for live sessions</li>
                     <li>Admin dashboard with revenue analytics</li>
-                    <li>Multi-currency (EUR/AUD/USD)</li>
                     <li>Hosting, SSL, daily backups included</li>
                     <li>2 months post-launch bugfixing included</li>
                     <li>1 hour/month minor adjustments (from month 3)</li>
@@ -1102,12 +1105,7 @@
             </div>
         </div>
 
-        <div class="bundle-card reveal">
-            <h4>Bundle Deal</h4>
-            <p>Combine the Circle platform setup with the shop updates</p>
-            <div class="bundle-price">€750 <span style="font-size: 18px; font-weight: 400; color: var(--text-light)">one-time</span></div>
-            <div class="bundle-save">Save €250 when you combine both projects</div>
-        </div>
+<!-- bundle removed -->
     </div>
 </section>
 
@@ -1129,7 +1127,7 @@
                 <p>Clinical Psychologist — AU Lead</p>
             </div>
         </div>
-        <img class="community-image reveal" src="https://www.22qminded.com/wp-content/uploads/2024/09/getty-images-KuKZDDPJ_KI-22qMinded-1-1024x683.jpg" alt="Community">
+        <img class="community-image reveal" src="https://www.22qminded.com/wp-content/uploads/2024/09/pawel-czerwinski-e_bd7ZuKYj8-22qMinded-1-1024x683.jpg" alt="22qMinded Community">
     </div>
 </section>
 
