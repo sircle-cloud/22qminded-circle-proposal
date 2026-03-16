@@ -465,9 +465,31 @@
             .phase-item { grid-template-columns: 1fr; }
             .phase-number { margin-bottom: -10px; }
             .phase-item::before { display: none; }
-            .comparison-table { font-size: 11px; display: block; overflow-x: auto; }
-            .comparison-table thead th, .comparison-table tbody td { padding: 10px 8px; min-width: 100px; }
-            .comparison-table tbody td:first-child { min-width: 120px; }
+            .comparison-table, .comparison-table thead, .comparison-table tbody,
+            .comparison-table th, .comparison-table td, .comparison-table tr {
+                display: block;
+            }
+            .comparison-table thead { display: none; }
+            .comparison-table tbody tr {
+                margin-bottom: 16px; background: var(--white); border-radius: 12px;
+                box-shadow: var(--shadow-sm); overflow: hidden; border: 1px solid var(--border);
+            }
+            .comparison-table tbody td {
+                display: flex; justify-content: space-between; align-items: flex-start;
+                padding: 12px 16px; text-align: right; font-size: 13px; position: relative;
+            }
+            .comparison-table tbody td::before {
+                content: attr(data-label); font-weight: 600; color: var(--text-dark);
+                text-align: left; flex: 1; padding-right: 12px; font-size: 13px;
+            }
+            .comparison-table tbody td:first-child {
+                background: var(--bg-light); font-weight: 700; font-size: 14px;
+                display: block; text-align: left; width: 100%;
+            }
+            .comparison-table tbody td:first-child::before { display: none; }
+            .comparison-table tbody td:last-child { background: rgba(109, 204, 197, 0.08); }
+            .highlight-row td { background: var(--primary-light) !important; }
+            .highlight-row td:first-child { background: var(--primary-light) !important; }
             .founders { flex-direction: column; align-items: center; gap: 30px; }
             .pricing-card { margin: 0 -12px; }
             .pricing-price { font-size: 44px; }
@@ -973,18 +995,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Custom branding & domain</td><td>Limited</td><td>Limited</td><td><span class="check">100% yours</span></td></tr>
-                <tr><td>Video library & hosting</td><td>Separate (~€30/mo)</td><td>Basic, included</td><td><span class="check">Included (via Vimeo)</span></td></tr>
-                <tr><td>Auto group assignment</td><td><span class="cross">Manual</span></td><td><span class="cross">Manual</span></td><td><span class="check">Automatic</span></td></tr>
-                <tr><td>Database-level group isolation</td><td><span class="cross">App-level only</span></td><td><span class="cross">App-level only</span></td><td><span class="check">Row-level security</span></td></tr>
-                <tr><td>Transaction fees</td><td>1-2% on all payments</td><td>Platform fee + Stripe</td><td><span class="check">Stripe standard only</span></td></tr>
-                <tr><td>Coaching booking</td><td><span class="cross">Needs Calendly (~€15/mo)</span></td><td><span class="cross">External tool</span></td><td><span class="check">Built-in booking system</span></td></tr>
-                <tr><td>Price lock for existing members</td><td><span class="cross">Manual/Zapier</span></td><td><span class="cross">Not supported</span></td><td><span class="check">Automatic</span></td></tr>
-                <tr><td>Zoom integration for live sessions</td><td>Manual (copy-paste links)</td><td>Manual</td><td><span class="check">Integrated scheduling + auto-recording to library</span></td></tr>
-                <tr><td>Admin dashboard (MRR/churn)</td><td>Limited</td><td>Basic</td><td><span class="check">Full analytics</span></td></tr>
-                <tr><td>Data ownership</td><td>Their servers</td><td>Their servers</td><td><span class="check">100% yours</span></td></tr>
-                <tr><td>Setup cost</td><td>€1,500 – €3,000</td><td>€1,000 – €2,500</td><td><span class="check">€1,250</span></td></tr>
-                <tr class="highlight-row"><td>3-year total cost</td><td>€9,300 – €12,600</td><td>€7,400 – €10,300</td><td>€6,614</td></tr>
+                <tr><td>Custom branding & domain</td><td data-label="Circle.so">Limited</td><td data-label="Mighty Networks">Limited</td><td data-label="22qMinded Community"><span class="check">100% yours</span></td></tr>
+                <tr><td>Video library & hosting</td><td data-label="Circle.so">Separate (~€30/mo)</td><td data-label="Mighty Networks">Basic, included</td><td data-label="22qMinded Community"><span class="check">Included (via Vimeo)</span></td></tr>
+                <tr><td>Auto group assignment</td><td data-label="Circle.so"><span class="cross">Manual</span></td><td data-label="Mighty Networks"><span class="cross">Manual</span></td><td data-label="22qMinded Community"><span class="check">Automatic</span></td></tr>
+                <tr><td>Database-level group isolation</td><td data-label="Circle.so"><span class="cross">App-level only</span></td><td data-label="Mighty Networks"><span class="cross">App-level only</span></td><td data-label="22qMinded Community"><span class="check">Row-level security</span></td></tr>
+                <tr><td>Transaction fees</td><td data-label="Circle.so">1-2% on all payments</td><td data-label="Mighty Networks">Platform fee + Stripe</td><td data-label="22qMinded Community"><span class="check">Stripe standard only</span></td></tr>
+                <tr><td>Coaching booking</td><td data-label="Circle.so"><span class="cross">Needs Calendly (~€15/mo)</span></td><td data-label="Mighty Networks"><span class="cross">External tool</span></td><td data-label="22qMinded Community"><span class="check">Built-in booking system</span></td></tr>
+                <tr><td>Price lock for existing members</td><td data-label="Circle.so"><span class="cross">Manual/Zapier</span></td><td data-label="Mighty Networks"><span class="cross">Not supported</span></td><td data-label="22qMinded Community"><span class="check">Automatic</span></td></tr>
+                <tr><td>Zoom integration</td><td data-label="Circle.so">Manual (copy-paste)</td><td data-label="Mighty Networks">Manual</td><td data-label="22qMinded Community"><span class="check">Integrated + auto-recording</span></td></tr>
+                <tr><td>Admin dashboard (MRR/churn)</td><td data-label="Circle.so">Limited</td><td data-label="Mighty Networks">Basic</td><td data-label="22qMinded Community"><span class="check">Full analytics</span></td></tr>
+                <tr><td>Data ownership</td><td data-label="Circle.so">Their servers</td><td data-label="Mighty Networks">Their servers</td><td data-label="22qMinded Community"><span class="check">100% yours</span></td></tr>
+                <tr><td>Setup cost</td><td data-label="Circle.so">€1,500 – €3,000</td><td data-label="Mighty Networks">€1,000 – €2,500</td><td data-label="22qMinded Community"><span class="check">€1,250</span></td></tr>
+                <tr class="highlight-row"><td>3-year total cost</td><td data-label="Circle.so">€9,300 – €12,600</td><td data-label="Mighty Networks">€7,400 – €10,300</td><td data-label="22qMinded Community">€6,614</td></tr>
             </tbody>
         </table>
         </div>
@@ -1150,7 +1172,7 @@
                     <strong>€1,250</strong> one-time setup
                     <p style="text-align: left; max-width: 320px; margin: 8px auto 0;">
                         <span style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--border);">
-                            <span>Platform build + Vimeo migration</span> <strong>€750</strong>
+                            <span>Platform setup + Vimeo integration</span> <strong>€750</strong>
                         </span>
                         <span style="display: flex; justify-content: space-between; padding: 4px 0;">
                             <span>Landing page + WooCommerce setup</span> <strong>€500</strong>
