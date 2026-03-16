@@ -440,6 +440,14 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            .hero { padding: 140px 0 80px; min-height: 480px; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 16px; }
+            .hero-badge { font-size: 11px; padding: 6px 14px; }
+            nav .nav-badge { font-size: 10px; padding: 4px 10px; }
+            .nav-logo img { height: 36px; }
+            .section-intro { margin-bottom: 36px; }
             .problem-grid, .features-grid, .steps-grid, .data-grid { grid-template-columns: 1fr; }
             .mk-layout { grid-template-columns: 1fr; }
             .mk-sidebar { display: none; }
@@ -448,9 +456,15 @@
             .phase-item { grid-template-columns: 1fr; }
             .phase-number { margin-bottom: -10px; }
             .phase-item::before { display: none; }
-            .comparison-table { font-size: 12px; }
-            .comparison-table thead th, .comparison-table tbody td { padding: 12px; }
+            .comparison-table { font-size: 11px; display: block; overflow-x: auto; }
+            .comparison-table thead th, .comparison-table tbody td { padding: 10px 8px; min-width: 100px; }
+            .comparison-table tbody td:first-child { min-width: 120px; }
             .founders { flex-direction: column; align-items: center; gap: 30px; }
+            .pricing-card { margin: 0 -12px; }
+            .pricing-price { font-size: 44px; }
+            .mockup-tabs { gap: 6px; }
+            .mockup-tab { padding: 8px 14px; font-size: 12px; }
+            .cost-savings span { font-size: 36px; }
         }
     </style>
 </head>
