@@ -77,11 +77,20 @@
         }
         nav .container { display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .nav-logo img { height: 48px; }
+        .nav-logo img { height: 54px; }
         .nav-logo span { display: none; }
         nav .nav-badge {
             font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px;
             color: var(--primary-dark); background: var(--primary-light); padding: 6px 14px; border-radius: 20px;
+        }
+        .nav-menu { display: flex; gap: 6px; align-items: center; }
+        .nav-menu a {
+            font-size: 13px; font-weight: 500; color: var(--text-medium); text-decoration: none;
+            padding: 6px 14px; border-radius: 20px; transition: all 0.2s;
+        }
+        .nav-menu a:hover { color: var(--primary-dark); background: var(--primary-light); }
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
         }
 
         /* Hero */
@@ -446,7 +455,7 @@
             .hero p { font-size: 16px; }
             .hero-badge { font-size: 11px; padding: 6px 14px; }
             nav .nav-badge { font-size: 10px; padding: 4px 10px; }
-            .nav-logo img { height: 36px; }
+            .nav-logo img { height: 40px; }
             .section-intro { margin-bottom: 36px; }
             .problem-grid, .features-grid, .steps-grid, .data-grid { grid-template-columns: 1fr; }
             .mk-layout { grid-template-columns: 1fr; }
@@ -477,7 +486,13 @@
             <img src="https://www.22qminded.com/wp-content/uploads/2024/08/22q_minded_logo.png" alt="22qMinded" onerror="this.style.display='none'">
             <span>22qMinded</span>
         </a>
-        <span class="nav-badge">Platform Proposal</span>
+        <div class="nav-menu">
+            <a href="#how-it-works">How It Works</a>
+            <a href="#features">Features</a>
+            <a href="#preview">Preview</a>
+            <a href="#comparison">Compare</a>
+            <a href="#pricing">Pricing</a>
+        </div>
     </div>
 </nav>
 
@@ -486,7 +501,7 @@
     <div class="container">
         <div class="hero-inner reveal">
             <div class="hero-badge">Proposal — March 2026</div>
-            <h1>Your Own <span>Community Platform</span></h1>
+            <h1>Your Own<br><span>Community Platform</span></h1>
             <p>A private, secure membership platform built exclusively for 22qMinded — on your domain, in your branding, under your full control.</p>
         </div>
     </div>
@@ -526,7 +541,7 @@
 </section>
 
 <!-- How It Works -->
-<section class="alt">
+<section class="alt" id="how-it-works">
     <div class="container">
         <div class="section-label reveal">How It Works</div>
         <h2 class="reveal">Seamless integration with your existing site</h2>
@@ -560,8 +575,39 @@
     </div>
 </section>
 
+<!-- Access Models -->
+<section id="access">
+    <div class="container">
+        <div class="section-label reveal">Two Access Models</div>
+        <h2 class="reveal">Individual purchases and membership, working together</h2>
+        <p class="section-intro reveal">Your existing webinar buyers keep what they've bought. Community members get access to everything. Both models run in parallel — no conflicts, no confusion.</p>
+        <div class="problem-grid">
+            <div class="solution-card reveal" style="border-left-color: var(--primary);">
+                <h3>Individual Purchase</h3>
+                <ul>
+                    <li>Buy one webinar, own it forever — lifetime access</li>
+                    <li>Stored permanently on their personal account</li>
+                    <li>Low-commitment entry point for new parents</li>
+                    <li>Works via your existing WooCommerce shop</li>
+                    <li>Access remains even if they later join and cancel a membership</li>
+                </ul>
+            </div>
+            <div class="solution-card reveal reveal-delay-2" style="border-left-color: var(--accent);">
+                <h3>Community Membership</h3>
+                <ul>
+                    <li>Monthly or annual subscription via WooCommerce</li>
+                    <li>Full access to the entire video library while active</li>
+                    <li>Community discussions, coaching booking, live sessions</li>
+                    <li>Cancel and library access stops — but individually purchased webinars remain</li>
+                    <li>The deeper relationship for committed families</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Features -->
-<section>
+<section id="features">
     <div class="container">
         <div class="section-label reveal">What's Included</div>
         <h2 class="reveal">Everything you need, nothing you don't</h2>
@@ -937,14 +983,14 @@
                 <tr><td>Zoom integration for live sessions</td><td>Manual (copy-paste links)</td><td>Manual</td><td><span class="check">Integrated scheduling + auto-recording to library</span></td></tr>
                 <tr><td>Admin dashboard (MRR/churn)</td><td>Limited</td><td>Basic</td><td><span class="check">Full analytics</span></td></tr>
                 <tr><td>Data ownership</td><td>Their servers</td><td>Their servers</td><td><span class="check">100% yours</span></td></tr>
-                <tr><td>Setup cost</td><td>€1,500 – €3,000</td><td>€1,000 – €2,500</td><td><span class="check">€750</span></td></tr>
-                <tr class="highlight-row"><td>3-year total cost</td><td>€9,300 – €12,600</td><td>€7,400 – €10,300</td><td>€6,114</td></tr>
+                <tr><td>Setup cost</td><td>€1,500 – €3,000</td><td>€1,000 – €2,500</td><td><span class="check">€1,250</span></td></tr>
+                <tr class="highlight-row"><td>3-year total cost</td><td>€9,300 – €12,600</td><td>€7,400 – €10,300</td><td>€6,614</td></tr>
             </tbody>
         </table>
         </div>
 
         <div class="cost-savings reveal">
-            Save up to <span>€6,486</span> over 3 years compared to Circle.so
+            Save up to <span>€5,986</span> over 3 years compared to Circle.so
         </div>
     </div>
 </section>
@@ -996,9 +1042,11 @@
                         <li>Content management: upload/edit/categorise videos</li>
                         <li>25% member discount on Feelings in Focus + Care4Parents</li>
                         <li>Price lock logic for existing members on renewal</li>
+                        <li>Landing page on 22qminded.com (membership sales page)</li>
+                        <li>WooCommerce membership product + Stripe webhook to platform</li>
                         <li>Security audit + GDPR checklist + responsive polish</li>
                     </ul>
-                    <div class="phase-deliverable">Deliverable: Production-ready platform — launch date confirmed</div>
+                    <div class="phase-deliverable">Deliverable: Production-ready platform + sales page — launch date confirmed</div>
                 </div>
             </div>
             <div class="phase-item reveal">
@@ -1099,8 +1147,15 @@
             </div>
             <div class="pricing-body">
                 <div class="pricing-setup">
-                    <strong>€750</strong> one-time setup
-                    <p>Branding, configuration, Vimeo setup, migration of existing webinars</p>
+                    <strong>€1,250</strong> one-time setup
+                    <p style="text-align: left; max-width: 320px; margin: 8px auto 0;">
+                        <span style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--border);">
+                            <span>Platform build + Vimeo migration</span> <strong>€750</strong>
+                        </span>
+                        <span style="display: flex; justify-content: space-between; padding: 4px 0;">
+                            <span>Landing page + WooCommerce setup</span> <strong>€500</strong>
+                        </span>
+                    </p>
                 </div>
                 <ul class="pricing-features">
                     <li>community.22qminded.com — your domain</li>
@@ -1113,8 +1168,10 @@
                     <li>2 months post-launch bugfixing included</li>
                     <li>1 hour/month minor adjustments (from month 3)</li>
                     <li>Dutch-language support — response within 24h</li>
-                    <li>Only standard Stripe fees (1.5% + €0.25)</li>
-                    <li>No platform commission — ever</li>
+                    <li>Dedicated landing page on 22qminded.com</li>
+                    <li>WooCommerce product + Stripe webhook integration</li>
+                    <li>Dual-access model (individual + membership)</li>
+                    <li>Only standard Stripe fees — no platform commission</li>
                 </ul>
             </div>
         </div>
@@ -1164,11 +1221,15 @@
         </div>
         <div class="faq-item reveal">
             <h4>What about existing webinar buyers?</h4>
-            <p>We'll create a migration flow in Phase 4. Options include credit toward membership, complimentary access for a period, or keeping separate access. We'll design the best approach together.</p>
+            <p>Individual purchases remain accessible forever — regardless of membership status. If someone buys "Big Feelings, Simple Fixes" and later joins the Community, then cancels, they still have lifetime access to what they paid for. We'll migrate existing buyers in Phase 4.</p>
         </div>
         <div class="faq-item reveal">
             <h4>What counts as a "bug" vs. a "feature request"?</h4>
             <p>A bug is when something doesn't work as described in this proposal. A feature request is anything new that wasn't in the original scope. When in doubt, we'll discuss it openly.</p>
+        </div>
+        <div class="faq-item reveal">
+            <h4>Is the landing page on our website included?</h4>
+            <p>Yes. We build a dedicated membership sales page on 22qminded.com that explains the Community, shows what's included, and drives visitors to the WooCommerce checkout. This is included in the one-time setup fee.</p>
         </div>
         <div class="faq-item reveal">
             <h4>How does the WordPress integration work?</h4>
